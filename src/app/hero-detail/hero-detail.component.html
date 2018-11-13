@@ -1,0 +1,9 @@
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div>
+    <label>name: <input [(ngModel)]="hero.name" placeholder="name" /> </label>
+  </div>
+</div>
+<button (click)="goBack()">Volver</button> <!--Botón que vamos a utilizar para volver a la locación anterior-->
+<button (click)="save()">Grabar</button>

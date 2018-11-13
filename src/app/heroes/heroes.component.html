@@ -1,0 +1,81 @@
+<!-- {{ hero }} -->
+<!-- <h2>{{hero.name | uppercase}} Details</h2> -->
+<!-- Usamos el pipe para darle formato a la propiedad hero.name -->
+<!--
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+      <label>name:
+          <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="Nombre">
+-->
+<!-- Para usar ngModel hay que agregar FormsModule -->
+<!--
+  </label>
+  </div>
+-->
+<h2>My Heroes</h2>
+<!-- Para crear un heroe nuevo usando HTTP. -->
+<div>
+  <!--The hash (#) prefix to "heroName" means that we're defining a hero variable.-->
+  <label>Hero name: <input #heroName /> </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value = ''">add</button>
+</div>
+<!--
+  Esto servia cuando teníamos al componente herodetails dentro de este componente.
+-->
+<!-- <ul class="heroes"> -->
+<!-- Event binding: from an element to a component. (click)="onSelect(hero)" -->
+<!--
+  Class binding: Para agregar/remover class de CSS al elemento según una condición.
+-->
+<!--
+  <li
+    *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)"
+  >
+-->
+<!-- Usamos la directiva *ngFor para mostrar/recorrer el array de heroes. -->
+<!--
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </li>
+  </ul>
+-->
+
+<!-- Usando routing -->
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+  </li>
+</ul>
+
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+--><!--
+  5) Vamos a usar ruteo para poder visualizar los detalles del heroe desde el dashboard o heroes.
+-->
+<!--
+  Pasamos el valor de esta propiedad a la propiedad del otro componente que es del mismo tipo (Hero)
+-->
+<!--
+  It's a one way data binding from the selectedHero property of the HeroesComponent
+  to the hero property of the target element, which maps to the hero property of the
+  HeroDetailComponent.
+-->
+
+<!-- <div *ngIf="selectedHero">
+--><!--
+  Usamos la directiva *ngIf para validar si hay algun heroe seleccionado.
+-->
+<!--
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+      <div><span>id: </span>{{selectedHero.id}}</div>
+      <div>
+          <label>name:
+              <input type="text" [(ngModel)]="selectedHero.name" placeholder="name">
+          </label>
+      </div>
+  </div>
+-->
