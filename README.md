@@ -55,7 +55,7 @@ en el texto del elemento HTML o en el atributo del mismo y también guardar los 
 
 <h3>
   {{title}}
-  <img src="{{heroImageUrl}}">
+  <img src="https://puu.sh/ayUb8/e248ab9c89.gif">
 </h3>
 
 ## Pipes
